@@ -16,7 +16,7 @@
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "Atharva",
   "license": "ISC",
   "description": ""
 }
