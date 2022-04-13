@@ -29,5 +29,5 @@ app.use("/server/users", userRouter);
 app.use("/server/posts", postRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server listining at port ${PORT}`);
+  console.log(`Server listening at port ${PORT}`);
 });
