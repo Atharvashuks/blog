@@ -9,6 +9,7 @@ import authRoutes from "./routes/auth.routes.js";
 import userRouter from "./routes/user.routes.js";
 import postRoutes from "./routes/posts.routes.js";
 import categoriesRoute from "./routes/categories.routes.js";
+import imgRouter from "./routes/img.routes.js";
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.use("/server/auth", authRoutes);
 app.use("/server/users", userRouter);
 app.use("/server/posts", postRoutes);
 app.use("/server/categories", categoriesRoute);
+app.use("/server/upload", imgRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}`);
