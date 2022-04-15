@@ -5,7 +5,7 @@ import { images } from "../../constants";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const user = false;
+  const user = true;
   return (
     <div className="navbar">
       <div className="navbar__left">

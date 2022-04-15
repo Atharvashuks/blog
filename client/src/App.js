@@ -6,7 +6,7 @@ import { Navbar } from "./components";
 import { Header, Single, Write, Settings, Login, Register,Home } from "./container";
 
 const App = () => {
-  const user = false;
+  const user = true;
   return (
     <BrowserRouter>
       <Navbar />
