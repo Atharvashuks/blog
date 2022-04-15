@@ -8,6 +8,7 @@ import "./db/config/db.config.js";
 import authRoutes from "./routes/auth.routes.js";
 import userRouter from "./routes/user.routes.js";
 import postRoutes from "./routes/posts.routes.js";
+import categoriesRoute from "./routes/categories.routes.js";
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ const PORT = process.env.PORT || 5000;
 app.use("/server/auth", authRoutes);
 app.use("/server/users", userRouter);
 app.use("/server/posts", postRoutes);
+app.use("/server/categories", categoriesRoute);
 
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}`);

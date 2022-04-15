@@ -52,10 +52,41 @@ export const deletePost = async (req, res) => {
       } catch (error) {
         res.status(501).json(error);
       }
+    } else {
+      res.status(401).json("You can delete only your post!!!");
     }
-    else{
-        res.status(401).json('You can delete only your post!!!');
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+export const getPost = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const post = await Post.findById(id);
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+export const getAllPost = async (req, res) => {
+  const username = req.query.user;
+  const catName = req.query.cat;
+  try {
+    let posts;
+    if (username) {
+      posts = await Post.find({ username });
+    } else if (catName) {
+      posts = await Post.find({
+        categories: {
+          $in: [catName],
+        },
+      });
+    } else {
+      posts = await Post.find();
     }
+    res.status(200).json(posts);
   } catch (error) {
     res.status(500).json(error);
   }
