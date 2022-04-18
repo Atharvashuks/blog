@@ -1,23 +1,18 @@
-import React from 'react';
-import Post from './Post/Post';
+import React from "react";
+import Post from "./Post/Post";
 
-import './Posts.css';
+import "./Posts.css";
 
-const Posts = () => {
-  return (
+const Posts = ({ posts }) => {
+  return !posts.length ? (
+    <div>Loading.....</div>
+  ) : (
     <div className="app__posts">
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {posts?.map((post, i) => (
+        <Post post={post} key={i} />
+      ))}
     </div>
   );
-}
+};
 
 export default Posts;
