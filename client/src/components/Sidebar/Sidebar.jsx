@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch,useSelector} from 'react-redux'
 
 import { images } from '../../constants';
+import {getCategories} from '../../reduxState/actions/categories.action'
 
 import './Sidebar.css';
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategories())
+  }, [dispatch])
+
+  const categories = useSelector((state) => state.categoriesReducer)
+
+  console.log(categories)
+  
   return (
     <div className="app__sildebar">
       <div className="app__sidebar-item">
@@ -17,11 +29,11 @@ const Sidebar = () => {
       <div className="app__sidebar-item">
         <span className="app__sidebat-item-title">categories</span>
         <ul className="app__sidebar-list">
-          <li className="app__sidebar-list-item">Life</li>
-          <li className="app__sidebar-list-item">Music</li>
-          <li className="app__sidebar-list-item">Style</li>
-          <li className="app__sidebar-list-item">Tech</li>
-          <li className="app__sidebar-list-item">Sports</li>
+          {
+            categories?.map((category) => (
+              <li className="app__sidebar-list-item">{category.name}</li>
+            ))
+          }
         </ul>
       </div>
       <div className="app__sidebar-item">

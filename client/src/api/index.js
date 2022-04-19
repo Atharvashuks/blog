@@ -5,3 +5,4 @@ import { baseURL } from "../Utils/baseURL";
 const API = axios.create({ baseURL: baseURL });
 
 export const fetchPosts = () => API.get("/server/posts");
+export const getCategories = () => API.get("/server/categories");

@@ -1,3 +1,4 @@
 const FETCH_ALL = "FETCH_ALL";
-
-export { FETCH_ALL };
+const GET_CATEGORIES = "GET_CATEGORIES";
+ 
+export { FETCH_ALL,GET_CATEGORIES };

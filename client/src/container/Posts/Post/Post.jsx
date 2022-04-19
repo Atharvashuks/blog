@@ -17,7 +17,7 @@ const Post = ({ post }) => {
             <span className="app__post-info-categorie">{category.name}</span>
           ))}
         </div>
-        <Link></Link>
+        {/* <Link></Link> */}
         <span className="app__post-title">{post.title}</span>
         <hr />
         <span className="app__post-date">
