@@ -12,4 +12,4 @@ mongo db atlas
 
 Status: development
 
-Review: daily
+Review: delayed
